@@ -1,0 +1,774 @@
+
+
+Pular para o conteúdo
+Como usar o E-mail de SENAI-SC Serviço Nacional de Aprendizagem Industrial com leitores de tela
+
+8 de 552
+(sem assunto)
+Caixa de entrada
+
+Kaio Gabriel Faustino <kaio_faustino@estudante.sesisenai.org.br>
+18:06 (há 1 hora)
+para mim
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Cliente Fácil - Alphas Sites</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<!-- ================================= -->
+<!-- LOGIN -->
+<!-- ================================= -->
+
+<div id="login" class="tela">
+
+    <div class="card-login">
+
+        <h1>Cliente Fácil</h1>
+
+        <p>Gestão completa para empresas</p>
+
+        <input
+            id="usuario"
+            type="text"
+            placeholder="Usuário">
+
+        <input
+            id="senha"
+            type="password"
+            placeholder="Senha">
+
+        <button onclick="login()">
+
+            Entrar
+
+        </button>
+
+        <button
+            class="secundario"
+            onclick="abrirCadastro()">
+
+            Criar conta
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- ================================= -->
+<!-- CADASTRO -->
+<!-- ================================= -->
+
+<div id="cadastro"
+     class="tela escondido">
+
+    <div class="card-login">
+
+        <h1>Criar Empresa</h1>
+
+        <input
+            id="nomeEmpresa"
+            placeholder="Nome da empresa">
+
+        <input
+            id="novoUsuario"
+            placeholder="Usuário">
+
+        <input
+            id="novaSenha"
+            type="password"
+            placeholder="Senha">
+
+        <button onclick="criarConta()">
+
+            Cadastrar
+
+        </button>
+
+        <button
+            class="secundario"
+            onclick="voltarLogin()">
+
+            Voltar
+
+        </button>
+
+    </div>
+
+</div><!-- ================================= -->
+<!-- SISTEMA -->
+<!-- ================================= -->
+
+<div id="sistema" class="escondido">
+
+    <header>
+
+        <div>
+
+            <h1>Cliente Fácil</h1>
+
+            <p id="empresaLogada">
+
+                Bem-vindo
+
+            </p>
+
+        </div>
+
+        <button onclick="sair()">
+
+            Sair
+
+        </button>
+
+    </header>
+
+
+    <div class="layout">
+
+
+        <!-- MENU LATERAL -->
+
+        <nav class="menu">
+
+            <button onclick="abrirPagina('dashboard')">
+
+                📊 Dashboard
+
+            </button>
+
+            <button onclick="abrirPagina('clientes')">
+
+                👥 Clientes
+
+            </button>
+
+            <button onclick="abrirPagina('produtos')">
+
+                📦 Produtos
+
+            </button>
+
+            <button onclick="abrirPagina('vendas')">
+
+                💰 Vendas
+
+            </button>
+
+            <button onclick="abrirPagina('orcamentos')">
+
+                🧾 Orçamentos
+
+            </button>
+
+            <button onclick="abrirPagina('configuracoes')">
+
+                ⚙️ Configurações
+
+            </button>
+
+        </nav>
+
+
+        <!-- CONTEÚDO -->
+
+        <main><!-- ================================= -->
+<!-- DASHBOARD -->
+<!-- ================================= -->
+
+<section id="dashboard" class="pagina">
+
+
+    <div class="boas-vindas">
+
+
+        <h2>
+
+            👋 Bem-vindo!
+
+        </h2>
+
+
+        <p id="dataHoje"></p>
+
+
+    </div>
+
+
+
+
+    <div class="cards">
+
+
+
+        <div class="card">
+
+
+            <h3>
+
+                👥 Clientes
+
+            </h3>
+
+
+            <p id="totalClientes">
+
+                0
+
+            </p>
+
+
+        </div>
+
+
+
+
+        <div class="card">
+
+
+            <h3>
+
+                📦 Produtos
+
+            </h3>
+
+
+            <p id="totalProdutos">
+
+                0
+
+            </p>
+
+
+        </div>
+
+
+
+
+        <div class="card">
+
+
+            <h3>
+
+                💰 Vendas
+
+            </h3>
+
+
+            <p id="totalVendas">
+
+                0
+
+            </p>
+
+
+        </div>
+
+
+
+
+        <div class="card">
+
+
+            <h3>
+
+                💵 Faturamento
+
+            </h3>
+
+
+            <p id="totalFaturamento">
+
+                R$ 0,00
+
+            </p>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+    <!-- AÇÕES RÁPIDAS -->
+
+    <div class="acoesRapidas">
+
+
+        <h2>
+
+            ⚡ Ações Rápidas
+
+        </h2>
+
+
+
+        <button onclick="abrirPagina('clientes')">
+
+            ➕ Novo Cliente
+
+        </button>
+
+
+
+        <button onclick="abrirPagina('produtos')">
+
+            📦 Novo Produto
+
+        </button>
+
+
+
+        <button onclick="abrirPagina('vendas')">
+
+            💰 Nova Venda
+
+        </button>
+
+
+
+        <button onclick="abrirPagina('orcamentos')">
+
+            🧾 Novo Orçamento
+
+        </button>
+
+
+
+    </div>
+
+
+
+</section><!-- ================================= -->
+<!-- CLIENTES -->
+<!-- ================================= -->
+
+<section id="clientes" class="pagina escondido">
+
+
+    <h2>
+
+        👥 Clientes
+
+    </h2>
+
+
+
+    <input
+    id="pesquisaCliente"
+    placeholder="Pesquisar cliente..."
+    onkeyup="pesquisarClientes()">
+
+
+
+    <input
+    id="nomeCliente"
+    placeholder="Nome do cliente">
+
+
+
+    <input
+    id="telefoneCliente"
+    placeholder="Telefone">
+
+
+
+    <input
+    id="emailCliente"
+    placeholder="E-mail">
+
+
+
+    <button onclick="salvarCliente()">
+
+        ➕ Salvar Cliente
+
+    </button>
+
+
+
+    <ul id="listaClientes">
+
+    </ul>
+
+
+
+</section><!-- ================================= -->
+<!-- PRODUTOS -->
+<!-- ================================= -->
+
+<section id="produtos" class="pagina escondido">
+
+
+    <h2>
+
+        📦 Produtos
+
+    </h2>
+
+
+
+
+    <input
+    id="pesquisaProduto"
+    placeholder="Pesquisar produto..."
+    onkeyup="pesquisarProdutos()">
+
+
+
+
+
+    <input
+    id="nomeProduto"
+    placeholder="Nome do produto">
+
+
+
+
+
+    <input
+    id="precoProduto"
+    type="number"
+    placeholder="Preço">
+
+
+
+
+
+    <input
+    id="estoqueProduto"
+    type="number"
+    placeholder="Quantidade em estoque">
+
+
+
+
+
+    <button onclick="salvarProduto()">
+
+        ➕ Salvar Produto
+
+    </button>
+
+
+
+
+
+    <ul id="listaProdutos">
+
+    </ul>
+
+
+
+</section><!-- ================================= -->
+<!-- VENDAS -->
+<!-- ================================= -->
+
+<section id="vendas" class="pagina escondido">
+
+
+    <h2>
+
+        💰 Vendas
+
+    </h2>
+
+
+
+
+    <input
+    id="clienteVenda"
+    placeholder="Cliente">
+
+
+
+
+
+    <input
+    id="produtoVenda"
+    placeholder="Produto">
+
+
+
+
+
+    <input
+    id="valorVenda"
+    type="number"
+    placeholder="Valor">
+
+
+
+
+
+    <button onclick="salvarVenda()">
+
+        💾 Registrar Venda
+
+    </button>
+
+
+
+
+
+    <ul id="listaVendas">
+
+    </ul>
+
+
+
+</section><!-- ================================= -->
+<!-- ORÇAMENTOS -->
+<!-- ================================= -->
+
+<section id="orcamentos" class="pagina escondido">
+
+
+    <h2>
+
+        🧾 Orçamentos
+
+    </h2>
+
+
+
+
+    <!-- CLIENTE INTEGRADO -->
+
+    <select
+    id="clienteOrcamento"
+    onchange="preencherDadosCliente()">
+
+
+
+        <option value="">
+
+            Selecione o cliente
+
+        </option>
+
+
+
+    </select>
+
+
+
+
+
+    <input
+    id="telefoneOrcamento"
+    placeholder="Telefone"
+    readonly>
+
+
+
+
+
+    <input
+    id="emailOrcamento"
+    placeholder="E-mail"
+    readonly>
+
+
+
+
+
+    <input
+    id="descricaoOrcamento"
+    placeholder="Descrição do serviço ou produto">
+
+
+
+
+
+    <input
+    id="valorOrcamento"
+    type="number"
+    placeholder="Valor">
+
+
+
+
+
+    <button onclick="adicionarItemOrcamento()">
+
+        ➕ Adicionar Item
+
+    </button>
+
+
+
+
+
+    <button onclick="salvarOrcamento()">
+
+        📝 Salvar Orçamento
+
+    </button>
+
+
+
+
+
+    <button onclick="gerarPDF()">
+
+        📄 Gerar PDF
+
+    </button>
+
+
+
+
+
+    <button onclick="enviarWhatsApp()">
+
+        📱 Enviar WhatsApp
+
+    </button>
+
+
+
+
+
+    <button onclick="limparOrcamento()">
+
+        🆕 Novo Orçamento
+
+    </button>
+
+
+
+
+
+    <ul id="listaOrcamentos">
+
+    </ul>
+
+
+
+</section><!-- ================================= -->
+<!-- CONFIGURAÇÕES -->
+<!-- ================================= -->
+
+<section id="configuracoes" class="pagina escondido">
+
+
+    <h2>
+
+        ⚙️ Configurações da Empresa
+
+    </h2>
+
+
+
+
+    <input
+    id="empresaNome"
+    placeholder="Nome da empresa">
+
+
+
+
+
+    <input
+    id="empresaTelefone"
+    placeholder="Telefone">
+
+
+
+
+
+    <input
+    id="empresaEmail"
+    placeholder="E-mail">
+
+
+
+
+
+    <input
+    id="empresaEndereco"
+    placeholder="Endereço">
+
+
+
+
+
+    <button onclick="salvarConfiguracoes()">
+
+        💾 Salvar Configurações
+
+    </button>
+
+
+
+</section>
+
+
+
+</main>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- ================================= -->
+<!-- BIBLIOTECA PDF -->
+<!-- ================================= -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+
+
+
+<!-- ================================= -->
+<!-- JAVASCRIPTS DO SISTEMA -->
+<!-- ================================= -->
+
+<script src="login.js"></script>
+
+<script src="app.js"></script>
+
+<script src="dashboard.js"></script>
+
+<script src="clientes.js"></script>
+
+<script src="produtos.js"></script>
+
+<script src="vendas.js"></script>
+
+<script src="orcamento.js"></script>
+
+<script src="configuracao.js"></script>
+
+
+
+</body>
+
+</html>

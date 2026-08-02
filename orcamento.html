@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cliente Fácil - Orçamento</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<header>
+
+<img id="logoEmpresa" src="logo/logo.png" alt="Logo da Empresa">
+
+<h1 id="nomeEmpresa">
+Nome da Empresa
+</h1>
+
+<h2>
+Orçamento de Serviço
+</h2>
+
+</header>
+
+
+
+<section class="cliente">
+
+
+<h3>
+Dados do Cliente
+</h3>
+
+
+<input 
+type="text" 
+id="clienteOrcamento"
+placeholder="Nome do cliente">
+
+
+
+</section>
+
+
+
+
+<section class="servicos">
+
+
+<h3>
+Serviços
+</h3>
+
+
+
+<input 
+type="text"
+id="descricaoOrcamento"
+placeholder="Descrição do serviço">
+
+
+
+<input 
+type="number"
+id="valorOrcamento"
+placeholder="Valor">
+
+
+
+<button onclick="adicionarItemOrcamento()">
+
+Adicionar Serviço
+
+</button>
+
+
+
+<ul id="listaOrcamentos">
+
+</ul>
+
+
+
+
+</section>
+
+
+
+
+<section class="acoes">
+
+
+<button onclick="salvarOrcamento()">
+
+💾 Salvar Orçamento
+
+</button>
+
+
+
+<button onclick="gerarPDF()">
+
+📄 Baixar PDF
+
+</button>
+
+
+
+<button onclick="enviarWhatsApp()">
+
+📱 Enviar WhatsApp
+
+</button>
+
+
+
+</section>
+
+
+
+</div>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="orcamento.js"></script>
+
+
+</body>
+
+</html>
